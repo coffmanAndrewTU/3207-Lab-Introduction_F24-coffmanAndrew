@@ -4,15 +4,16 @@
 #include <stddef.h>
 #include "random.h"
 
-int rand_string(char *s, size_t size);
+void rand_string(char *s, size_t size);
 char* rand_string_alloc(size_t size);
 
 int main(){
     // 7 chosen for size because that is what is specified in the homework pdf
     char *randomString = rand_string_alloc(7);
-    printf("%s");
-    free(*randomString);
+    printf("%s", randomString);
+    free(randomString);
     randomString = NULL;
+    return 0;
 }
 
 char* rand_string_alloc(size_t size)
@@ -24,7 +25,7 @@ char* rand_string_alloc(size_t size)
      return s;
 }
 
-int rand_string(char *s, size_t size){
+void rand_string(char *s, size_t size){
     char *t = s;
     for(int i = 0; i < size; ++i){
         *t = randchar();

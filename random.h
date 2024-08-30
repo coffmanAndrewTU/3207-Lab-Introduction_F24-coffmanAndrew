@@ -3,4 +3,4 @@
 
 char randchar();
 
-#endif;
+#endif
