@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stddef.h>
+#include <time.h>
 #include "random.h"
 
 void rand_string(char *s, size_t size);
@@ -9,8 +10,9 @@ char* rand_string_alloc(size_t size);
 
 int main(){
     // 7 chosen for size because that is what is specified in the homework pdf
+    srand(time(0));
     char *randomString = rand_string_alloc(7);
-    printf("%s", randomString);
+    printf("%s\n", randomString);
     free(randomString);
     randomString = NULL;
     return 0;
